@@ -1,24 +1,11 @@
-/**
- * Descrizione: Funzione per controllare se le parole sono lunghe uguali.
- * @param {string} word1
- * @param {string} word2
- * @returns {boolean}
- */
-function checkLength(word1, word2) {
-  if (word1.length === word2.length) {
-    return true;
-  } else {
-    return false;
-  }
+function sameLength(word1, word2) {
+    return word1.length === word2.length;
 }
 
-/**
- * Descrizione:  Stampare in pagina
- * @param {string} check
- */
-function printResult(check) {
-  const resultElem = document.getElementById("result");
-  console.log(resultElem);
-
-  resultElem.innerHTML += `${check}`;
+function getLongestWord(word1, word2) {
+    if (word1.length > word2.length) {
+        return word1;
+    } else {
+        return word2;
+    }
 }

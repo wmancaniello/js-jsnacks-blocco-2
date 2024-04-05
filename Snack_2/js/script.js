@@ -1,12 +1,15 @@
 //  Chiedo due parole
-let word1 = prompt("Dimmi una parola");
-let word2 = prompt("Dimmi un altra parola");
-console.log(word1, word2);
+const userWord1 = prompt("Dimmi una parola");
+const userWord2 = prompt("Dimmi un altra parola");
+// console.log(userWord1, userWord2);
 
+let message = "";
 
-// OUTPUT, quindi stampo entrambe se hanno la stessa lumghezza, altrimenti la più lunga
-if (checkLength(word1, word2)) {
-    printResult(`${word1} ${word2}`)
+if (sameLength(userWord1, userWord2)) {
+  message = `Le due parole hanno la stessa lunghezza: ${userWord1} e ${userWord2}`;
 } else {
-    
+  const longest = getLongestWord(userWord1, userWord2);
+  message = `la parola più lunga è: ${longest}`;
 }
+
+document.getElementById("result").innerHTML = message;
